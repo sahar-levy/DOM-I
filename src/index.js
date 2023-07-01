@@ -39,4 +39,16 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
   },
 };
 
-console.log('project wired!')
+// images
+const logoImg = document.querySelector('#logo-img');
+logoImg.src = siteContent.images['logo-img']; 
+//siteContent is the object with all the data (see top of page)
+//.images is the object holding images
+//logo-img is the image needed for the logo
+//bracket notation used due to hyphen in logo-img
+const ctaImg = document.querySelector('#cta-img');
+ctaImg.src = siteContent.images['cta-img'];
+const middleImg = document.querySelector('#middle-img');
+middleImg.src = siteContent.images['accent-img'];
+
+// anchor tags
