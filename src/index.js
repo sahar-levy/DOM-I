@@ -102,3 +102,22 @@ pBottom[2].textContent = siteContent['main-content']['vision-content'];
 // CTA
 document.querySelector('.cta .cta-text h1').textContent = siteContent.cta.h1;
 document.querySelector('.cta .cta-text button').textContent = siteContent.cta.button;
+
+// NAV LINKS
+const navLinks = document.querySelectorAll('header nav a');
+/*
+navLinks becomes a node list bc of querySelectorAll which creates a list of elements
+*/
+const navLinksText = Object.values(siteContent.nav);
+/*
+- siteContent.nav returns an object and we want an array of string.
+- Object.values() returns an array of values
+- .forEach() can be used with querySelectorAll()
+
+Now we have 2 arrays: (1) contains elements, and (2) contains text contents so we can loops over the arrays using .forEach()
+*/
+navLinks.forEach((link, idx) => {
+  link.textContent = navLinksText[idx]; //line 111; for the first link set the text content as the first string in the navLinksText array
+  link.classList.add('italic');
+});
+
