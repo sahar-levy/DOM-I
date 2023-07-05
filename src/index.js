@@ -39,7 +39,7 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
   },
 };
 
-// images
+// IMAGES
 const logoImg = document.querySelector('#logo-img');
 logoImg.src = siteContent.images['logo-img']; 
 //siteContent is the object with all the data (see top of page)
@@ -53,12 +53,12 @@ ctaImg.src = siteContent.images['cta-img'];
 const middleImg = document.querySelector('#middle-img');
 middleImg.src = siteContent.images['accent-img'];
 
-// footer link
+// FOOTER LINK
 const footerLink = document.querySelector('footer a');
 footerLink.textContent = siteContent.footer.copyright;
 footerLink.classList.add('bold');
 
-// contact
+// CONTACT
 const contact = document.querySelector('section.contact');
 contact.children[0].textContent = siteContent.contact['contact-h4'];
 // contact.children returns a collection of child elements of the contact element and functions as an array with indices
@@ -70,7 +70,32 @@ contact.children[1].textContent = siteContent.contact['address'];
 /*
 another way to do that is:
 contact.querySelector('p:nth-of-type(1)').textContent = siteContent.contact['address'];
+
+- using :nth-of-type starts at 1 not at 0 like arrays.
+
 */
 contact.children[2].textContent = siteContent.contact['phone'];
 contact.children[3].textContent = siteContent.contact['email'];
+
+// TOP CONTENT
+const topContent = document.querySelector('.top-content');
+topContent.children[0].children[0].textContent = siteContent['main-content']['features-h4'];
+topContent.children[0].children[1].textContent = siteContent['main-content']['features-content'];
+
+topContent.children[1].children[0].textContent = siteContent['main-content']['about-h4'];
+topContent.children[1].children[1].textContent = siteContent['main-content']['about-content'];
+
+// BOTTOM CONTENT
+const bottomContent = document.querySelector('.bottom-content');
+const h4sBottom = bottomContent.querySelectorAll('h4');
+const pBottom = bottomContent.querySelectorAll('p');
+
+h4sBottom[0].textContent = siteContent['main-content']['services-h4'];
+h4sBottom[1].textContent = siteContent['main-content']['product-h4'];
+h4sBottom[2].textContent = siteContent['main-content']['vision-h4'];
+
+pBottom[0].textContent = siteContent['main-content']['services-content'];
+pBottom[1].textContent = siteContent['main-content']['product-content'];
+pBottom[2].textContent = siteContent['main-content']['vision-content'];
+
 
