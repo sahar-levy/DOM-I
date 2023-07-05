@@ -58,4 +58,19 @@ const footerLink = document.querySelector('footer a');
 footerLink.textContent = siteContent.footer.copyright;
 footerLink.classList.add('bold');
 
+// contact
+const contact = document.querySelector('section.contact');
+contact.children[0].textContent = siteContent.contact['contact-h4'];
+// contact.children returns a collection of child elements of the contact element and functions as an array with indices
+/*
+another way to write that is:
+contact.querySelector('h4).textContent = siteContent.contact['contact-h4'];
+*/
+contact.children[1].textContent = siteContent.contact['address'];
+/*
+another way to do that is:
+contact.querySelector('p:nth-of-type(1)').textContent = siteContent.contact['address'];
+*/
+contact.children[2].textContent = siteContent.contact['phone'];
+contact.children[3].textContent = siteContent.contact['email'];
 
